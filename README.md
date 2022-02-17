@@ -6,3 +6,4 @@ this is the python program
     print(the is true)
   else 
     print(the number is not true)
+this is my 1st commit
