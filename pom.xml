@@ -1,4 +1,5 @@
-<project xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://maven.apache.org/POM/4.0.0"
+<project xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xmlns="http://maven.apache.org/POM/4.0.0"
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
     <modelVersion>4.0.0</modelVersion>
     <groupId>com.maha</groupId>
@@ -74,8 +75,8 @@
         <dependency>
             <groupId>commons-dbcp</groupId>
             <artifactId>commons-dbcp</artifactId>
-            <version>${commons-dbcp.version}</version>
-        </dependency>
+            <version>${commons-dbcp.version
+               </dependency>
 
         <dependency>
             <groupId>javax.servlet</groupId>
@@ -98,14 +99,20 @@
     </dependencies>
     <build>
         <plugins>
+            <!-- Other plugins... -->
+            
+            <!-- Maven War Plugin -->
             <plugin>
-                <plugin>
-            <groupId>org.apache.maven.plugins</groupId>
-            <artifactId>maven-war-plugin</artifactId>
-            <version>3.6.3</version>
-            <configuration>
-                <webXml>src/main/webapp/WEB-INF/web.xml</webXml>
-            </configuration> 
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-war-plugin</artifactId>
+                <version>3.3.1</version>
+                <configuration>
+                    <webXml>src/main/webapp/WEB-INF/web.xml</webXml>
+                </configuration>
+            </plugin>
+            
+            <!-- Jetty Maven Plugin -->
+            <plugin>
                 <groupId>org.eclipse.jetty</groupId>
                 <artifactId>jetty-maven-plugin</artifactId>
                 <version>9.2.11.v20150529</version>
@@ -115,7 +122,6 @@
                         <contextPath>/</contextPath>
                     </webApp>
                 </configuration>
-               </plugin>
             </plugin>
         </plugins>
     </build>
